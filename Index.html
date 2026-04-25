@@ -1,0 +1,44 @@
+<h1 id="t">CODING WITH BALU</h1>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 70px;
+        font-family: sans-serif;
+        background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: rainbow 4s linear infinite;
+        position: absolute;
+        transition: .2s;
+    }
+
+    @keyframes rainbow {
+        0% {
+            filter: hue-rotate(0deg)
+        }
+
+        100% {
+            filter: hue-rotate(360deg)
+        }
+    }
+</style>
+
+<script>
+    let t = document.getElementById("t");
+
+    onmousemove = e => {
+        let x = (e.x - window.innerWidth / 2) / 6;
+        let y = (e.y - window.innerHeight / 2) / 6;
+        t.style.transform = `translate(${-x}px,${-y}px)`
+    }
+</script>
